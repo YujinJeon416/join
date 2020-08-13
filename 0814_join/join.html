@@ -42,7 +42,7 @@
                     </div>
                     <div class="day">
                         <select name="" id="day">
-                            <option value="">일</option>
+                            <option value="">1일</option>
                         </select>
                     </div>
                 </div>
@@ -95,7 +95,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div id="clear">
+                <button type="button" id="clear_btn">
+                    동의하고 가입완료
+                </button>
             </div>
         </form>
     </div> <!-- wrap -->
@@ -104,7 +109,7 @@
         let date = new Date();
         let year = document.querySelector("#year"),
             child_year = year.querySelector("option");
-
+        let month = document.querySelector("#month");
         function full_Year() {
             for (let i = 1970; i <= date.getFullYear(); i++) {
                 year.innerHTML += `<option value="${i}">${i}년</option>`
@@ -119,17 +124,34 @@
         }
         full_month();
 
+        month.addEventListener("change",full_day);
+
         function full_day() {
-            for (let i = 1; i <= date.getDate(); i++){
-                    day.innerHTML +=`<option value="${i}">${i}일</option>`
+            console.log(month.value);
+            day.innerHTML = " ";
+            if (month.value == 1 || month.value == 3 || month.value == 5 || month.value == 7
+            || month.value == 8 || month.value == 10 || month.value == 12) {
+                for (let i = 1; i <= 31; i++) {
+                day.innerHTML += `<option value="${i}">${i}일</option>`
+            }
+            }
+            else if (month.value == 2) {
+                for (let i = 1; i <= 29; i++) {
+                day.innerHTML += `<option value="${i}">${i}일</option>`
+            }
+            }
+
+            else if (month.value == 4 || month.value == 6 || month.value == 9 || month.value == 11) {
+                for (let i = 1; i <= 30; i++) {
+                day.innerHTML += `<option value="${i}">${i}일</option>`
+            }
             }
         }
-        full_day();
-       
-        
-       if(child_year.selected==true){
-           console.log(year.value);
-       }
+
+
+
+
+
     </script>
 </body>
 
