@@ -1,0 +1,109 @@
+#wrap {
+    width: 700px;
+    margin: 0 auto;
+}
+
+h2 {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+span {
+    display: inline-block;
+    font-weight: bold;
+    width: 130px;
+}
+
+#input_area {
+    border: 1px solid #999;
+}
+
+.name {}
+
+.name,
+.id,
+.pw,
+.pw_re,
+.birth,
+.man,
+.phone,
+.sms {
+    /* height: 50px; */
+    /* line-height: 60px; */
+    padding: 10px 20px;
+    border-bottom: 1px solid #999;
+}
+
+.sms {
+    border-bottom: none;
+}
+
+#name_input,
+#id_input,
+#pw_input,
+#pw_re_input {
+    width: 400px;
+    border: none;
+    padding: 10px;
+}
+
+.birth {
+    display: flex;
+}
+
+.birth select {
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    background: url('images/arrow_01.png') no-repeat 95% 50%;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #999;
+}
+
+
+
+select::-ms-expand {
+    display: none;
+}
+
+.boy,
+.girl {
+    display: inline-block;
+    width: 20px;
+}
+
+.should_box .age_text {
+    display: inline-block;
+    color: red;
+}
+
+.check_area h3,
+h4 {
+    display: inline-block;
+}
+
+.check_all {
+    border: 1px solid #999;
+    border-bottom: none;
+    padding-left: 20px;
+}
+
+.check_flex_box {
+    border: 1px solid #999;
+}
+
+.flex_box1,
+.flex_box2 {
+    display: flex;
+}
+
+.check_flex_item {
+    margin: 0 20px;
+}
