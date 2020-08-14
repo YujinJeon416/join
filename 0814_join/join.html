@@ -10,7 +10,7 @@
 
 <body>
     <div id="wrap">
-        <form action="">
+        <form action="https://www.google.com" id="form">
             <h2>회원가입</h2>
             <div id="input_area">
                 <div class="name">
@@ -22,11 +22,11 @@
                 </div>
 
                 <div class="pw">
-                    <span class="ps_text">비밀번호</span> <input type="text" id="pw_input">
+                    <span class="ps_text">비밀번호</span> <input type="password" id="pw_input">
                 </div>
 
                 <div class="pw_re">
-                    <span class="pw_re_text">비밀번호 확인</span> <input type="text" id="pw_re_input">
+                    <span class="pw_re_text">비밀번호 확인</span> <input type="password" id="pw_re_input">
                 </div>
 
                 <div class="birth">
@@ -64,33 +64,33 @@
 
             <div class="iframe_box">
                 <h4>이용약관</h4>
-                <iframe src="license.html" frameborder="5" width="700px" height="200px"></iframe>
+                <iframe src="license.html" frameborder="1" width="700px" height="200px"></iframe>
             </div>
 
             <div class="should_box">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="should">
                 <h4 class="age_text">14세 이상입니다.(필수)</h4>
             </div>
 
             <div class="check_area">
                 <div class="check_all">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="total_check">
                     <h3>전체동의</h3>
                 </div>
                 <div class="check_flex_box">
                     <div class="flex_box1">
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
                     </div>
                     <div class="flex_box2">
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
                     </div>
@@ -124,30 +124,73 @@
         }
         full_month();
 
-        month.addEventListener("change",full_day);
+        month.addEventListener("change", full_day);
 
         function full_day() {
             console.log(month.value);
             day.innerHTML = " ";
             if (month.value == 1 || month.value == 3 || month.value == 5 || month.value == 7
-            || month.value == 8 || month.value == 10 || month.value == 12) {
+                || month.value == 8 || month.value == 10 || month.value == 12) {
                 for (let i = 1; i <= 31; i++) {
-                day.innerHTML += `<option value="${i}">${i}일</option>`
-            }
+                    day.innerHTML += `<option value="${i}">${i}일</option>`
+                }
             }
             else if (month.value == 2) {
                 for (let i = 1; i <= 29; i++) {
-                day.innerHTML += `<option value="${i}">${i}일</option>`
-            }
+                    day.innerHTML += `<option value="${i}">${i}일</option>`
+                }
             }
 
             else if (month.value == 4 || month.value == 6 || month.value == 9 || month.value == 11) {
                 for (let i = 1; i <= 30; i++) {
-                day.innerHTML += `<option value="${i}">${i}일</option>`
-            }
+                    day.innerHTML += `<option value="${i}">${i}일</option>`
+                }
             }
         }
 
+
+        let total_check = document.querySelector("#total_check");
+        let check_ed = document.querySelectorAll(".check_ed");
+
+        console.log(check_ed);
+        total_check.addEventListener("change", total);
+        for (var i = 0; i < check_ed.length; i++) {
+            check_ed[i].addEventListener("change", sepa_check);
+        }
+        function total() {
+            if (total_check.checked == true) {
+                for (var i = 0; i < check_ed.length; i++) {
+                    check_ed[i].checked = true;
+                }
+            }
+            else if (total_check.checked == false) {
+                for (var i = 0; i < check_ed.length; i++) {
+                    check_ed[i].checked = false;
+                }
+            }
+        }
+
+        let check_count = 0;
+        function sepa_check() {
+            total_check.checked = false;
+
+        }
+
+        let should = document.querySelector("#should");
+        const clear_btn = document.querySelector("#clear_btn");
+        const form = document.querySelector("#form");
+        let input = document.querySelectorAll("input");
+        clear_btn.addEventListener("click", clear);
+
+        function clear() {
+            if (should.checked == true && total_check.checked == true) {      //조건추가예정
+                form.submit();
+            }
+            else{
+                console.log("fuck")
+            }
+        }
+        console.log(input);
 
 
 
