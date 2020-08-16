@@ -44,10 +44,13 @@ span {
 #name_input,
 #id_input,
 #pw_input,
-#pw_re_input {
+#pw_re_input,
+.phone_Num,
+.phone_Clear{
     width: 400px;
     border: none;
     padding: 10px;
+    margin-right:40px;
 }
 
 .birth {
@@ -67,7 +70,9 @@ span {
     border: 1px solid #999;
 }
 
-
+iframe{
+    border: 1px solid #999;
+}
 
 select::-ms-expand {
     display: none;
@@ -106,4 +111,19 @@ h4 {
 
 .check_flex_item {
     margin: 0 20px;
+}
+
+#clear{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 15px;
+    text-align: center;
+}
+#clear_btn{
+    background: #000;
+    color: white;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }

@@ -10,7 +10,7 @@
 
 <body>
     <div id="wrap">
-        <form action="">
+        <form action="https://www.google.com" id="form">
             <h2>회원가입</h2>
             <div id="input_area">
                 <div class="name">
@@ -22,17 +22,17 @@
                 </div>
 
                 <div class="pw">
-                    <span class="ps_text">비밀번호</span> <input type="text" id="pw_input">
+                    <span class="ps_text">비밀번호</span> <input type="password" id="pw_input">
                 </div>
 
                 <div class="pw_re">
-                    <span class="pw_re_text">비밀번호 확인</span> <input type="text" id="pw_re_input">
+                    <span class="pw_re_text">비밀번호 확인</span> <input type="password" id="pw_re_input">
                 </div>
 
                 <div class="birth">
                     <div class="year">
                         <select name="" id="year">
-                            <option value="">1970</option>
+                            <option value="">1970년</option>
                         </select>
                     </div>
                     <div class="month">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="day">
                         <select name="" id="day">
-                            <option value="">일</option>
+                            <option value="">1일</option>
                         </select>
                     </div>
                 </div>
@@ -54,83 +54,62 @@
                 </div>
 
                 <div class="phone">
-                    <span class="phone_input_text">휴대폰번호</span> <button type="button">인증</button>
+                    <span class="phone_input_text">휴대폰번호</span> <input type="text" class="phone_Num"> <button type="button">인증</button>
                 </div>
 
                 <div class="sms"">
-                <span class=" sms_input_text">SMS 인증번호</span> <button type="button">확인</button>
+                <span class=" sms_input_text">SMS 인증번호</span> <input type="text" class="phone_Clear"> <button type="button">확인</button>
                 </div>
             </div> <!-- input area -->
 
             <div class="iframe_box">
                 <h4>이용약관</h4>
-                <iframe src="license.html" frameborder="5" width="700px" height="200px"></iframe>
+<<<<<<< HEAD
+                <iframe src="license.html" frameborder="" width="700px" height="200px"></iframe>
+=======
+                <iframe src="license.html" frameborder="1" width="700px" height="200px"></iframe>
+>>>>>>> 5039a4872951080e2e5638fcfff58426c933cd2e
             </div>
 
             <div class="should_box">
-                <input type="checkbox" name="" id="">
+                <input type="checkbox" name="" id="should">
                 <h4 class="age_text">14세 이상입니다.(필수)</h4>
             </div>
 
             <div class="check_area">
                 <div class="check_all">
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="total_check">
                     <h3>전체동의</h3>
                 </div>
                 <div class="check_flex_box">
                     <div class="flex_box1">
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
                     </div>
                     <div class="flex_box2">
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
-                        <div class="check_flex_item"><input type="checkbox" name="" id="">
+                        <div class="check_flex_item"><input type="checkbox" name="" id="" class="check_ed">
                             <h4>이용약관</h4> <button type="button">내용보기</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div id="clear">
+                <button type="button" id="clear_btn">
+                    동의하고 가입완료
+                </button>
             </div>
         </form>
     </div> <!-- wrap -->
 
-    <script>
-        let date = new Date();
-        let year = document.querySelector("#year"),
-            child_year = year.querySelector("option");
-
-        function full_Year() {
-            for (let i = 1970; i <= date.getFullYear(); i++) {
-                year.innerHTML += `<option value="${i}">${i}년</option>`
-            }
-        }
-        full_Year();
-
-        function full_month() {
-            for (let i = 1; i <= 12; i++) {
-                month.innerHTML += `<option value="${i}">${i}월</option>`
-            }
-        }
-        full_month();
-
-        function full_day() {
-            for (let i = 1; i <= date.getDate(); i++){
-                    day.innerHTML +=`<option value="${i}">${i}일</option>`
-            }
-        }
-        full_day();
-       
-        
-       if(child_year.selected==true){
-           console.log(year.value);
-       }
-    </script>
+    <script src="join.js"></script>
 </body>
 
 </html>
