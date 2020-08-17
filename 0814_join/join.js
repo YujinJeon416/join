@@ -62,16 +62,9 @@ function total() {
     }
 }
 
-<<<<<<< HEAD
 let check_count  = 0;
 function sepa_check() {
     total_check.checked = false;
-=======
-let check_count = 0;
-function sepa_check() {
-    total_check.checked = false;
-
->>>>>>> 5039a4872951080e2e5638fcfff58426c933cd2e
 }
 
 let should = document.querySelector("#should");
@@ -80,7 +73,6 @@ const form = document.querySelector("#form");
 let input = document.querySelectorAll("input");
 clear_btn.addEventListener("click", clear);
 
-<<<<<<< HEAD
 console.log(input);
 
 function clear() {
@@ -95,14 +87,3 @@ function clear() {
 
 }
 
-=======
-function clear() {
-    if (should.checked == true && total_check.checked == true) {      //조건추가예정
-        form.submit();
-    }
-    else{
-        console.log("fuck")
-    }
-}
-console.log(input);
->>>>>>> 5039a4872951080e2e5638fcfff58426c933cd2e
