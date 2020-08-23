@@ -77,6 +77,9 @@ function sepa_check(){
     if(check_count==4){
         total_check.checked = true;
     }
+let check_count  = 0;
+function sepa_check() {
+    total_check.checked = false;
 }
 
 let should = document.querySelector("#should");
@@ -85,12 +88,17 @@ const form = document.querySelector("#form");
 let input = document.querySelectorAll("input");
 clear_btn.addEventListener("click", clear);
 
+console.log(input);
+
 function clear() {
-    if (should.checked == true && total_check.checked == true) {      //조건추가예정
+
+    if (should.checked == true && total_check.checked == true && input[0].value!="" && input[1].value!="" &&
+    input[2].value!="" && input[3].value!="") {      //조건추가예정
         form.submit();
     }
     else{
-        console.log("fuck")
+        alert("Fuck");
     }
+
 }
-console.log(input);
+}
