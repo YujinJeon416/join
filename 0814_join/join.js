@@ -47,6 +47,7 @@ let check_ed = document.querySelectorAll(".check_ed");
 console.log(check_ed);
 total_check.addEventListener("change", total);
 for (var i = 0; i < check_ed.length; i++) {
+    // check_ed[i].addEventListener("change", sepa_check);
     check_ed[i].addEventListener("change", sepa_check);
 }
 function total() {
@@ -62,10 +63,20 @@ function total() {
     }
 }
 
-let check_count  = 0;
-function sepa_check() {
+
+function sepa_check(){
     total_check.checked = false;
+    let check_count = 0;
+    for(var i = 0; i < check_ed.length; i++){
+        if(check_ed[i].checked == true){
+        check_count++;
+        console.log(check_count);
+    }
 }
+    
+    if(check_count==4){
+        total_check.checked = true;
+    }
 
 let should = document.querySelector("#should");
 const clear_btn = document.querySelector("#clear_btn");
@@ -86,4 +97,4 @@ function clear() {
     }
 
 }
-
+}
