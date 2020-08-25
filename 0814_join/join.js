@@ -73,7 +73,6 @@ function sepa_check(){
         console.log(check_count);
     }
 }
-    
     if(check_count==4){
         total_check.checked = true;
     }
